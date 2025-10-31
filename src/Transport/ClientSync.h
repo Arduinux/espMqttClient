@@ -10,7 +10,7 @@ the LICENSE file.
 
 #if defined(ARDUINO_ARCH_ESP8266) || defined(ARDUINO_ARCH_ESP32)
 
-#include <WiFiClient.h>  // includes IPAddress
+#include <Network.h>  // includes IPAddress
 
 #include "Transport.h"
 
@@ -26,7 +26,7 @@ class ClientSync : public Transport {
   void stop() override;
   bool connected() override;
   bool disconnected() override;
-  WiFiClient client;
+  NetworkClient client;
 };
 
 }  // namespace espMqttClientInternals
