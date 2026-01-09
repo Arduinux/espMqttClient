@@ -42,11 +42,13 @@ int ClientAsync::read(uint8_t* buf, size_t size) {
 }
 
 void ClientAsync::stop() {
-#if defined(ARDUINO_ARCH_ESP32) && ASYNCTCP_VERSION_NUM >= ASYNCTCP_VERSION_VAL(3, 4, 10)
-  client.close();
-#else
-  client.close(false);
-#endif
+#if defined(ARDUINO_ARCH_ESP32)
+# if ASYNCTCP_VERSION_NUM >= ((3 << 16) | (4 << 8) | 10)
+    client.close();
+# else
+    client.close(false);
+# endif // ASYNCTCP_VERSION_NUM >= ((3 << 16) | (4 << 8) | 10)
+#endif // defined(ARDUINO_ARCH_ESP32)
 }
 
 bool ClientAsync::connected() {
