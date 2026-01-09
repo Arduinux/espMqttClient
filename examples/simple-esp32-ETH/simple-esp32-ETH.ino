@@ -1,4 +1,7 @@
 
+#if __has_include(<Network.h>) == 0
+#  error "Network/Ethernet stack not available."
+#endif
 
 #include <ETH.h>
 #include <SPI.h>
