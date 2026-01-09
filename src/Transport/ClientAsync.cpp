@@ -47,8 +47,8 @@ void ClientAsync::stop() {
   client.close();
 # else
   client.close(false);
-# endif // ASYNCTCP_VERSION_NUM >= ((3 << 16) | (4 << 8) | 10)
-#endif // defined(ARDUINO_ARCH_ESP32)
+# endif  // ASYNCTCP_VERSION_NUM >= ((3 << 16) | (4 << 8) | 10)
+#endif  // defined(ARDUINO_ARCH_ESP32)
 }
 
 bool ClientAsync::connected() {

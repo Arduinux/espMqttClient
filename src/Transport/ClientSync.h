@@ -11,9 +11,9 @@ the LICENSE file.
 #if defined(ARDUINO_ARCH_ESP8266) || defined(ARDUINO_ARCH_ESP32)
 
 #if __has_include(<Network.h>)
-# include <Network.h> // includes IPAddress
+# include <Network.h>  // includes IPAddress
 #else
-# include <WiFiClient.h> // includes IPAddress
+# include <WiFiClient.h>  // includes IPAddress
 #endif
 
 #include "Transport.h"
